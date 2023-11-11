@@ -19,20 +19,12 @@ module UART #(
     output wire       RXDONE
 );
 
-    wire BCLKTX;
-    BAUDRATETX #(
-        .SCYCLE(SCYCLE), .BAUDRATE(BAUDRATE)
-    ) uBTX (
-        .CLK(CLK),
-        .RESET((RESET || (~TXSTART))),
-        .BCLK(BCLKTX)
-    );
-    TXD uTx (
+    TXD #(
+        .SCYCLE(SCYCLE), 
+        .BAUDRATE(BAUDRATE)
+    ) uTx (
         .CLK(CLK),
         .RESET(RESET),
-        
-        .BLCK(BCLKTX),
-        
         .TXDATA(TXDATA),
         .TXSTART(TXSTART), 
         .TXBUSY(TXBUSY),
@@ -40,21 +32,12 @@ module UART #(
         .TX(TX),
     );
 
-    wire BCLKRESET, BLKCRX;
-    BAUDRATERX #(
-        .SCYCLE(SCYCLE), .BAUDRATE(BAUDRATE)
-    ) uBRX (
-        .CLK(CLK),
-        .RESET((RESET || (~BCLKRESET))),
-        .BCLK(BLKCRX)
-    );
-    RXD uRx (
+    RXD #(
+        .SCYCLE(SCYCLE), 
+        .BAUDRATE(BAUDRATE)
+    ) uRx (
         .CLK(CLK),
         .RESET(RESET),
-        
-        .BCLK(BLKCRX),
-        .BCLKRESET(BCLKRESET),
-
         .RX(RX),
         .RXDATA(RXDATA),
         .RXBUSY(RXBUSY),

@@ -5,14 +5,16 @@ module BAUDRATETX #(
 ) (
     input wire CLK,
     input wire RESET,
+    input wire CLEAR,
     output wire BCLK
 );
 
     localparam baudrate = SCYCLE / BAUDRATE;
     reg [31:0] BCNT;
-    assign BOUT = (BCNT == (baudrate - 1));
+    assign BCLK = (BCNT == (baudrate - 1));
     always @(posedge CLK, negedge RESET) begin
         if (~RESET) BCNT <= 0;
+        else if (BCLK || CLEAR) BCNT <= 0;
         else BCNT <= BCNT + 1;
     end
 

@@ -5,6 +5,7 @@ module BAUDRATERX #(
 ) (
     input wire CLK,
     input wire RESET,
+    input wire BCLEAR,
     output wire BCLK
 );
 
@@ -16,7 +17,7 @@ module BAUDRATERX #(
     assign BCLK = (BCNT == (baudrate_b - 1));
     always @(posedge CLK, negedge RESET) begin
         if (~RESET) BCNT <= 0;
-        else if (BC) BCNT <= 0;
+        else if (BC || BCLEAR) BCNT <= 0;
         else BCNT <= BCNT; 
     end
     
