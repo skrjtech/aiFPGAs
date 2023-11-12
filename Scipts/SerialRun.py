@@ -37,4 +37,4 @@ def interactive():
             break
 
 if __name__ == "__main__":
-    recv()
+    interactive()

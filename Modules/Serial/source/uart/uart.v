@@ -6,48 +6,81 @@ module UART #(
 ) (
     input  wire       CLK       ,
     input  wire       RESET     ,
+    
     output wire       TX        ,
     input  wire [7:0] TXDATA    ,
     input  wire       TXSTART   ,
     output wire       TXBUSY    ,
     output wire       TXDONE    ,
+
     input  wire       RX        ,
     output wire [7:0] RXDATA    ,
-    input  wire       RXCATCH   ,
     output wire       RXBUSY    ,
     output wire       RXDONE
 );
 
-wire [1:0] STATE;
-wire BCLK, BREAK;
+wire [1:0] txstate;
+wire txbclk, txbreak;
 TXSTATE uTxState (
     .CLK    (CLK        ),
     .RESET  (RESET      ),
     .START  (TXSTART    ),
-    .BCLK   (BCLK       ),
-    .BREAK  (BREAK      ),
-    .STATE  (STATE      )
+    .BCLK   (txbclk     ),
+    .BREAK  (txbreak    ),
+    .STATE  (txstate    )
 );
 BAUDRATETX #(
-    .SCYCLE     (SCYCLE    ),
-    .BAUDRATE   (BAUDRATE  ),
-    .BITS       (BITS      )
+    .SCYCLE     (SCYCLE   ),
+    .BAUDRATE   (BAUDRATE ),
+    .BITS       (BITS     )
 ) uBDTx (
-    .CLK        (CLK    ),
-    .RESET      (RESET  ),
-    .STATE      (STATE  ),
-    .BCLK       (BCLK   ),
-    .BREAK      (BREAK  )
+    .CLK        (CLK     ),
+    .RESET      (RESET   ),
+    .STATE      (txstate ),
+    .BCLK       (txbclk  ),
+    .BREAK      (txbreak )
 );
 TXD uTxD (
-    .CLK    (CLK    ), 
-    .RESET  (RESET  ),   
-    .STATE  (STATE  ),   
-    .BCLK   (BCLK   ),    
-    .TXDATA (TXDATA ),  
-    .TXBUSY (TXBUSY ),  
-    .TXDONE (TXDONE ),  
-    .TX     (TX     )  
+    .CLK    (CLK     ), 
+    .RESET  (RESET   ),   
+    .STATE  (txstate ),   
+    .BCLK   (txbclk  ),    
+    .TXDATA (TXDATA  ),  
+    .TXBUSY (TXBUSY  ),  
+    .TXDONE (TXDONE  ),  
+    .TX     (TX      )  
+);
+
+wire [1:0] rxstate;
+wire rxbclk, rxbreak;
+RXSTATE uRxState (
+    .CLK    (CLK     ),
+    .RESET  (RESET   ),
+    .START  (RX     ),
+    .BCLK   (rxbclk  ),
+    .BREAK  (rxbreak ),
+    .STATE  (rxstate )
+);
+BAUDRATERX #(
+    .SCYCLE     (SCYCLE   ),
+    .BAUDRATE   (BAUDRATE ),
+    .BITS       (BITS     )
+) uBDRx (
+    .CLK        (CLK     ),
+    .RESET      (RESET   ),
+    .STATE      (rxstate ),
+    .BCLK       (rxbclk  ),
+    .BREAK      (rxbreak )
+);
+RXD uRxD (
+    .CLK    (CLK     ), 
+    .RESET  (RESET   ),   
+    .STATE  (rxstate ),   
+    .BCLK   (rxbclk  ),    
+    .RXDATA (RXDATA  ),  
+    .RXBUSY (RXBUSY  ),  
+    .RXDONE (RXDONE  ),  
+    .RX     (RX      )  
 );
 
 endmodule
