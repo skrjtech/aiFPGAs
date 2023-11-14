@@ -1,8 +1,8 @@
 
 module UART #(
-    parameter SCYCLE    = 50_000_000    ,
-    parameter BAUDRATE  = 9600          ,
-    parameter BITS      = 32
+    parameter 
+        SCYCLE    = 50_000_000    ,
+        BAUDRATE  = 9600
 ) (
     input  wire       CLK       ,
     input  wire       RESET     ,
@@ -21,7 +21,7 @@ module UART #(
 
 wire [1:0] txstate;
 wire txbclk, txbreak;
-TXSTATE uTxState (
+TRANSMITSTATE uTransmitState (
     .CLK    (CLK        ),
     .RESET  (RESET      ),
     .START  (TXSTART    ),
@@ -29,18 +29,17 @@ TXSTATE uTxState (
     .BREAK  (txbreak    ),
     .STATE  (txstate    )
 );
-BAUDRATETX #(
+TRANSMITBAUDRATE #(
     .SCYCLE     (SCYCLE   ),
-    .BAUDRATE   (BAUDRATE ),
-    .BITS       (BITS     )
-) uBDTx (
+    .BAUDRATE   (BAUDRATE )
+) uTransmitBaudrate (
     .CLK        (CLK     ),
     .RESET      (RESET   ),
     .STATE      (txstate ),
     .BCLK       (txbclk  ),
     .BREAK      (txbreak )
 );
-TXD uTxD (
+TRANSMIT uTransmit (
     .CLK    (CLK     ), 
     .RESET  (RESET   ),   
     .STATE  (txstate ),   
@@ -53,7 +52,7 @@ TXD uTxD (
 
 wire [1:0] rxstate;
 wire rxbclk, rxbreak;
-RXSTATE uRxState (
+RECIEVESTATE uRecieveState (
     .CLK    (CLK     ),
     .RESET  (RESET   ),
     .START  (RX     ),
@@ -61,18 +60,17 @@ RXSTATE uRxState (
     .BREAK  (rxbreak ),
     .STATE  (rxstate )
 );
-BAUDRATERX #(
+RECIEVEBAUDRATE #(
     .SCYCLE     (SCYCLE   ),
-    .BAUDRATE   (BAUDRATE ),
-    .BITS       (BITS     )
-) uBDRx (
+    .BAUDRATE   (BAUDRATE )
+) uRecieveBaudrate (
     .CLK        (CLK     ),
     .RESET      (RESET   ),
     .STATE      (rxstate ),
     .BCLK       (rxbclk  ),
     .BREAK      (rxbreak )
 );
-RXD uRxD (
+RECIEVE uRecieve (
     .CLK    (CLK     ), 
     .RESET  (RESET   ),   
     .STATE  (rxstate ),   
