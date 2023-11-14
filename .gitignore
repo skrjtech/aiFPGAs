@@ -1,5 +1,6 @@
 Modules/FPGA/*
 Modules/Serial/db/*
+Modules/Serial/incremental_db/*
 Modules/Serial/output_files/*
 Modules/Serial/simulation/*
 Modules/Serial/SERIAL_nativelink_simulation.rpt
