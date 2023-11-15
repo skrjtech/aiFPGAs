@@ -1,3 +1,5 @@
+`include "transmit/txd.v"
+`include "recieve/rxd.v"
 
 module UART #(
     parameter 
@@ -19,66 +21,29 @@ module UART #(
     output wire       RXDONE
 );
 
-wire [1:0] txstate;
-wire txbclk, txbreak;
-TRANSMITSTATE uTransmitState (
-    .CLK    (CLK        ),
-    .RESET  (RESET      ),
-    .START  (TXSTART    ),
-    .BCLK   (txbclk     ),
-    .BREAK  (txbreak    ),
-    .STATE  (txstate    )
-);
-TRANSMITBAUDRATE #(
-    .SCYCLE     (SCYCLE   ),
-    .BAUDRATE   (BAUDRATE )
-) uTransmitBaudrate (
-    .CLK        (CLK     ),
-    .RESET      (RESET   ),
-    .STATE      (txstate ),
-    .BCLK       (txbclk  ),
-    .BREAK      (txbreak )
-);
-TRANSMIT uTransmit (
-    .CLK    (CLK     ), 
-    .RESET  (RESET   ),   
-    .STATE  (txstate ),   
-    .BCLK   (txbclk  ),    
-    .TXDATA (TXDATA  ),  
-    .TXBUSY (TXBUSY  ),  
-    .TXDONE (TXDONE  ),  
-    .TX     (TX      )  
+TXD #(
+    .SCYCLE     (SCYCLE     ),
+    .BAUDRATE   (BAUDRATE   )
+) uTxd (
+    .CLK        (CLK        ),
+    .RESET      (RESET      ),
+    .TX         (TX         ),
+    .TXDATA     (TXDATA     ),
+    .TXSTART    (TXSTART    ),
+    .TXBUSY     (TXBUSY     ),
+    .TXDONE     (TXDONE     )
 );
 
-wire [1:0] rxstate;
-wire rxbclk, rxbreak;
-RECIEVESTATE uRecieveState (
-    .CLK    (CLK     ),
-    .RESET  (RESET   ),
-    .START  (RX     ),
-    .BCLK   (rxbclk  ),
-    .BREAK  (rxbreak ),
-    .STATE  (rxstate )
-);
-RECIEVEBAUDRATE #(
-    .SCYCLE     (SCYCLE   ),
-    .BAUDRATE   (BAUDRATE )
-) uRecieveBaudrate (
-    .CLK        (CLK     ),
-    .RESET      (RESET   ),
-    .STATE      (rxstate ),
-    .BCLK       (rxbclk  ),
-    .BREAK      (rxbreak )
-);
-RECIEVE uRecieve (
-    .CLK    (CLK     ), 
-    .RESET  (RESET   ),   
-    .STATE  (rxstate ),   
-    .BCLK   (rxbclk  ),    
-    .RXDATA (RXDATA  ),  
-    .RXBUSY (RXBUSY  ),  
-    .RXDONE (RXDONE  ),  
-    .RX     (RX      )  
+RXD #(
+    .SCYCLE     (SCYCLE     ),
+    .BAUDRATE   (BAUDRATE   )
+) uRxd (
+    .CLK        (CLK        ),
+    .RESET      (RESET      ),
+    .RX         (RX         ),
+    .RXDATA     (RXDATA     ),
+    .RXBUSY     (RXBUSY     ),
+    .RXDONE     (RXDONE     )
 );
 
 endmodule

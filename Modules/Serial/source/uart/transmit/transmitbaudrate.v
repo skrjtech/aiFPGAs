@@ -1,4 +1,4 @@
-`include "../macrostate.vh"
+`include "../macrostate.v"
 
 module TRANSMITBAUDRATE #(
     parameter 
@@ -17,8 +17,8 @@ localparam BDR_BITS = $clog2(BDR);          // Baudrate Width Bits
 
 reg [3:0]           NUMCNT = 0;
 reg [BDR_BITS-1:0]  BCNT   = 0;
-assign BREAK = (NUMCNT == 10);
 assign BCLK  = (BCNT == (BDR - 1));
+assign BREAK = (NUMCNT == 9 && BCLK);
 always @(posedge CLK, negedge RESET) begin
     if (~RESET)     NUMCNT <= 0; 
     else if (BREAK) NUMCNT <= 0;
@@ -31,12 +31,12 @@ always @(posedge CLK, negedge RESET) begin
     end else begin
         case (STATE)
             `IDLE_MODE:  BCNT <= 0;
-            `INIT_MODE:  BCNT <= (BCLK) ? 0 : BCNT + 1;
+            `START_MODE: BCNT <= 0;
             `BUSY_MODE:  BCNT <= (BCLK) ? 0 : BCNT + 1;
+            `STOP_MODE:  BCNT <= 0;
             `DONE_MODE:  BCNT <= 0;
             default:     BCNT <= 0;
         endcase
     end 
-        
 end
 endmodule
