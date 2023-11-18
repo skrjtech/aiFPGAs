@@ -1,12 +1,10 @@
 
 `ifdef SIMULATION
-    `define SCYCLE 50
-    `define BAUDRATE 5
-    `define BITS 4
+    `define SCYCLE 100
+    `define BAUDRATE 24
 `else 
     `define SCYCLE 48_000_000
     `define BAUDRATE 9600
-    `define BITS 13
 `endif 
 
 module SERIAL (
@@ -24,8 +22,7 @@ module SERIAL (
     assign leds = rxdata;
     UART #(
         .SCYCLE     (`SCYCLE    ),
-        .BAUDRATE   (`BAUDRATE  ),
-        .BITS       (`BITS      )
+        .BAUDRATE   (`BAUDRATE  )
     ) uUart (
         .CLK        (clk48      ),
         .RESET      (reset      ),

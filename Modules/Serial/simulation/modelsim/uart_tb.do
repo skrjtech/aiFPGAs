@@ -17,15 +17,6 @@ vlog +define+SIMULATION                                     \
     -vlog01compat -work work                                \
     +incdir+../../../Serial                                 \
     ../../../Serial/SERIAL.v                                \
-    ../../../Serial/source/counter.v                        \
-    ../../../Serial/source/gen8bitdata.v                    \
-    ../../../Serial/source/uart/uart.v                      \
-    ../../../Serial/source/uart/transmit/transmit.v         \
-    ../../../Serial/source/uart/transmit/transmitstate.v    \
-    ../../../Serial/source/uart/transmit/transmitbaudrate.v \
-    ../../../Serial/source/uart/recieve/recieve.v           \
-    ../../../Serial/source/uart/recieve/recievestate.v      \
-    ../../../Serial/source/uart/recieve/recievebaudrate.v   \
     ../../../Serial/simulation/modelsim/uart_tb.v           
 
 # Invoke VSIM Simulator
@@ -40,29 +31,46 @@ add wave -hex sim:/uart_tb/sec1pos
 add wave -hex sim:/uart_tb/sec1pos_cnt
 
 # Prepare Wave Display
-add wave -divider SERIAL
+# add wave -divider SERIAL
 # add wave -hex sim:/uart_tb/uSERIAL/rx
-add wave -hex sim:/uart_tb/uSERIAL/tx
-# add wave -hex sim:/uart_tb/uSERIAL/leds
+# add wave -hex sim:/uart_tb/uSERIAL/tx
+add wave -hex sim:/uart_tb/uSERIAL/leds
 
 # Prepare Wave Display
 add wave -divider TRANSMIT_STATE
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitState/START
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitState/STATE
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitState/NEXT_STATE
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmitState/START
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmitState/STATE
 
 add wave -divider TRANSMIT_BAUDRATE
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitBaudrate/BCNT
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitBaudrate/NUMCNT
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitBaudrate/BCLK
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmitBaudrate/BREAK
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmitBaudrate/BCNT
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmitBaudrate/BCLK
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmitBaudrate/NUMCNT
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmitBaudrate/BREAK
 
 add wave -divider TRANSMIT
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmit/TXDATA
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmit/TXBUSY
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmit/TXDONE
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmit/TX
-add wave -hex sim:/uart_tb/uSERIAL/uUART/uTransmit/senddata
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmit/TXDATA
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmit/TXBUSY
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmit/TXDONE
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmit/TX
+add wave -hex sim:/uart_tb/uSERIAL/uUART/uTxd/uTransmit/senddata
+
+# add wave -divider RECIEVE_STATE
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveState/START
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveState/STATE
+# 
+# add wave -divider RECIEVE_BAUDRATE
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveBaudrate/BCNT
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveBaudrate/BCLK
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveBaudrate/BPOS
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveBaudrate/NUMCNT
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieveBaudrate/BREAK
+# 
+# add wave -divider RECIEVE
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieve/RXDATA
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieve/RXBUSY
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieve/RXDONE
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieve/RX
+# add wave -hex sim:/uart_tb/uSERIAL/uUART/uRxd/uRecieve/recvdata
 
 # Logging all Signals in WLF file
 log -r *

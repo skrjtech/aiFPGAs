@@ -8,6 +8,7 @@ module TRANSMITBAUDRATE #(
     input  wire       CLK    ,
     input  wire       RESET  ,
     input  wire [1:0] STATE  ,
+    input  wire       START  ,
     output wire       BCLK   ,
     output wire       BREAK
 );
@@ -30,12 +31,11 @@ always @(posedge CLK, negedge RESET) begin
         BCNT <= 0;
     end else begin
         case (STATE)
-            `IDLE_MODE:  BCNT <= 0;
-            `START_MODE: BCNT <= 0;
-            `BUSY_MODE:  BCNT <= (BCLK) ? 0 : BCNT + 1;
-            `STOP_MODE:  BCNT <= 0;
-            `DONE_MODE:  BCNT <= 0;
-            default:     BCNT <= 0;
+            `IDLE_MODE: BCNT <= 1'b0;
+            `IDLE_MODE: BCNT <= 1'b0;
+            `BUSY_MODE: BCNT <= (BCLK) ? 0 : BCNT + 1;
+            `DONE_MODE: BCNT <= 0;
+            default:    BCNT <= 0;
         endcase
     end 
 end

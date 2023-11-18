@@ -4,12 +4,11 @@
 
 module TXD #(
     parameter 
-        SCYCLE = 50_000_000,
+        SCYCLE   = 50_000_000,
         BAUDRATE = 9600
 ) (
     input  wire       CLK       ,
     input  wire       RESET     ,
-    
     output wire       TX        ,
     input  wire [7:0] TXDATA    ,
     input  wire       TXSTART   ,
@@ -20,33 +19,35 @@ module TXD #(
 wire [1:0] txstate;
 wire txbclk, txbreak;
 TRANSMITSTATE uTransmitState (
-    .CLK    (CLK        ),
-    .RESET  (RESET      ),
-    .START  (TXSTART    ),
-    .BCLK   (txbclk     ),
-    .BREAK  (txbreak    ),
-    .STATE  (txstate    )
+    .CLK        (CLK        ),
+    .RESET      (RESET      ),
+    .START      (TXSTART    ),
+    .BCLK       (txbclk     ),
+    .BREAK      (txbreak    ),
+    .STATE      (txstate    )
 );
 TRANSMITBAUDRATE #(
-    .SCYCLE     (SCYCLE   ),
-    .BAUDRATE   (BAUDRATE )
+    .SCYCLE     (SCYCLE     ),
+    .BAUDRATE   (BAUDRATE   )
 ) uTransmitBaudrate (
-    .CLK        (CLK     ),
-    .RESET      (RESET   ),
-    .STATE      (txstate ),
-    .BCLK       (txbclk  ),
-    .BREAK      (txbreak )
+    .CLK        (CLK        ),
+    .RESET      (RESET      ),
+    .START      (TXSTART    ),
+    .STATE      (txstate    ),
+    .BCLK       (txbclk     ),
+    .BREAK      (txbreak    )
 );
 TRANSMIT uTransmit (
-    .CLK    (CLK     ), 
-    .RESET  (RESET   ),   
-    .STATE  (txstate ),   
-    .BCLK   (txbclk  ),
-    .BREAK  (txbreak ),    
-    .TXDATA (TXDATA  ),  
-    .TXBUSY (TXBUSY  ),  
-    .TXDONE (TXDONE  ),  
-    .TX     (TX      )  
+    .CLK        (CLK        ), 
+    .RESET      (RESET      ),   
+    .STATE      (txstate    ),
+    .START      (TXSTART    ),
+    .BCLK       (txbclk     ),
+    .BREAK      (txbreak    ),    
+    .TXDATA     (TXDATA     ),  
+    .TXBUSY     (TXBUSY     ),  
+    .TXDONE     (TXDONE     ),  
+    .TX         (TX         )  
 );
 
 endmodule

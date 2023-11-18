@@ -1,13 +1,13 @@
 
 module COUNTER #(
-    parameter SCYCLE = 50_000_000,
-    parameter BITS = 26
+    parameter 
+        SCYCLE = 50_000_000
 ) (
     input  wire CLK     ,
     input  wire RESET   ,
     output wire COUT
 );
-
+    localparam BITS = $clog2(SCYCLE + 1);
     reg [BITS-1:0] CNT;
     assign COUT = (CNT == (SCYCLE - 1));
     always @(posedge CLK, negedge RESET) begin

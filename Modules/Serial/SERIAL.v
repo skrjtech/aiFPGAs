@@ -1,17 +1,16 @@
+`include "source/counter.v"
+`include "source/gen8bitdata.v"
+`include "source/uart/uart.v"
 
 `ifdef SIMULATION
     `define SCYCLE 100
     `define BAUDRATE 25
     `define BITS 4
 `else 
-    `define SCYCLE 50_000_000
+    `define SCYCLE 48_000_000
     `define BAUDRATE 9600
     `define BITS 13
 `endif 
-
-// `define SCYCLE 48_000_000
-// `define BAUDRATE 9600
-// `define BITS 32
 
 module SERIAL (
     input  wire       clk   ,
@@ -20,13 +19,6 @@ module SERIAL (
     output wire       tx    ,
     output wire [7:0] leds
 );
-
-
-// wire clk50;
-// PLL uPLL (
-//     .inclk0 (clk    ), 
-//     .c0     (clk50  )
-// );
 
 wire [7:0] txdata, rxdata;
 wire txbusy, txdone;
@@ -37,22 +29,19 @@ assign leds = rxdata;
 COUNTER #(
     .SCYCLE (`SCYCLE )
 ) uCounter (
-    // .CLK        (clk50   ),
     .CLK        (clk     ),
     .RESET   (reset  ),
     .COUT    (txstart  )
 );
 GEN8BITDATA uGenD (
-    // .CLK        (clk50   ),
     .CLK        (clk     ),
     .RESET   (reset   ),
     .SEC1POS (txstart ),
     .DATA    (txdata  )
 );
 UART #(
-    `SCYCLE, `BAUDRATE, `BITS
+    `SCYCLE, `BAUDRATE
 ) uUART (
-    // .CLK        (clk50   ),
     .CLK        (clk     ),
     .RESET      (reset   ),
     

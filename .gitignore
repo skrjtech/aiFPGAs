@@ -1,14 +1,1 @@
-Modules/FPGA/*
-Modules/Serial/db/*
-Modules/Serial/incremental_db/*
-Modules/Serial/output_files/*
-Modules/Serial/simulation/*
-Modules/Serial/SERIAL_nativelink_simulation.rpt
-Modules/Serial/SERIAL.qsf
-Modules/Serial/SERIAL.qpf
-Modules/Serial/PLL_bb.v
-Modules/Serial/PLL_inst.v
-Modules/Serial/PLL.inc
-Modules/Serial/PLL.ppf
-Modules/Serial/PLL.qip
-Modules/Serial/PLL.v
+Modules

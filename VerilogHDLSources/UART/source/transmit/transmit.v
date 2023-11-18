@@ -1,12 +1,11 @@
-`include "../macrostate.v"
+
+`include "../definestate.vh"
 
 module TRANSMIT (
     input  wire       CLK     ,
     input  wire       RESET   ,
     input  wire [1:0] STATE   ,
-    input  wire       START   ,
     input  wire       BCLK    ,
-    input  wire       BREAK   ,
     input  wire [7:0] TXDATA  ,
     output reg        TXBUSY  ,
     output reg        TXDONE  ,
@@ -22,10 +21,10 @@ always @(posedge CLK, negedge RESET) begin
     if (~RESET) senddata <= 10'hFF;
     else 
         case (STATE)
-            `IDLE_MODE: senddata <= 10'hFF;
-            `INIT_MODE: senddata <= {1'b1, TXDATA, 1'b0};
+            `IDLE_MODE: senddata <= 10'hFF;    
+            `INIT_MODE: senddata <= (BCLK) ? {1'b1, TXDATA, 1'b0}  : senddata;
             `BUSY_MODE: senddata <= (BCLK) ? {1'b1, senddata[9:1]} : senddata;
-            `DONE_MODE: senddata <= 10'hFF;
+            `DONE_MODE: senddata <= senddata;
             default:    senddata <= 10'hFF;
         endcase
 end
@@ -38,8 +37,8 @@ always @(posedge CLK, negedge RESET) begin
     end else begin
         case (STATE)
             `IDLE_MODE: TXBUSY <= 1'b0;
-            `INIT_MODE: TXBUSY <= 1'b1;
-            `BUSY_MODE: TXBUSY <= (BREAK) ? 1'b0 : 1'b1;
+            `INIT_MODE: TXBUSY <= (BCLK) ? 1'b1 : 1'b0;
+            `BUSY_MODE: TXBUSY <= 1'b1;
             `DONE_MODE: TXBUSY <= 1'b0;
             default:    TXBUSY <= 1'b0;
         endcase
@@ -56,8 +55,8 @@ always @(posedge CLK, negedge RESET) begin
        case (STATE)
             `IDLE_MODE: TXDONE <= 1'b0;
             `INIT_MODE: TXDONE <= 1'b0;
-            `BUSY_MODE: TXDONE <= (BREAK) ? 1'b1 : 1'b0;
-            `DONE_MODE: TXDONE <= 1'b0;
+            `BUSY_MODE: TXDONE <= 1'b0;
+            `DONE_MODE: TXDONE <= 1'b1;
             default:    TXDONE <= 1'b0;
         endcase 
     end

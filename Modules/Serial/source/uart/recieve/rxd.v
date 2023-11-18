@@ -22,7 +22,7 @@ wire rxbclk, rxbreak;
 RECIEVESTATE uRecieveState (
     .CLK    (CLK     ),
     .RESET  (RESET   ),
-    .START  (RX     ),
+    .START  (RX      ),
     .BCLK   (rxbclk  ),
     .BREAK  (rxbreak ),
     .STATE  (rxstate )
@@ -33,6 +33,7 @@ RECIEVEBAUDRATE #(
 ) uRecieveBaudrate (
     .CLK        (CLK     ),
     .RESET      (RESET   ),
+    .START      (RX      ),
     .STATE      (rxstate ),
     .BCLK       (rxbclk  ),
     .BREAK      (rxbreak )
@@ -40,7 +41,7 @@ RECIEVEBAUDRATE #(
 RECIEVE uRecieve (
     .CLK    (CLK     ), 
     .RESET  (RESET   ),   
-    .STATE  (rxstate ),   
+    .STATE  (rxstate ),
     .BCLK   (rxbclk  ), 
     .BREAK  (rxbreak ),  
     .RXDATA (RXDATA  ),  

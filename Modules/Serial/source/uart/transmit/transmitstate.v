@@ -16,12 +16,11 @@ always @(posedge CLK, negedge RESET) begin
         NEXT_STATE <= `IDLE_MODE;
     end else begin
         case (STATE)
-            `IDLE_MODE:     NEXT_STATE <= (START) ? `START_MODE : NEXT_STATE;
-            `START_MODE:    NEXT_STATE <= `BUSY_MODE;
-            `BUSY_MODE:     NEXT_STATE <= (BREAK) ? `STOP_MODE  : NEXT_STATE;
-            `STOP_MODE:     NEXT_STATE <= `DONE_MODE;
-            `DONE_MODE:     NEXT_STATE <= `IDLE_MODE; 
-            default:        NEXT_STATE <= `IDLE_MODE;
+            `IDLE_MODE: NEXT_STATE <= (START) ? `INIT_MODE : NEXT_STATE;
+            `INIT_MODE: NEXT_STATE <= `BUSY_MODE;
+            `BUSY_MODE: NEXT_STATE <= (BREAK) ? `DONE_MODE : NEXT_STATE;
+            `DONE_MODE: NEXT_STATE <= `IDLE_MODE; 
+            default:    NEXT_STATE <= `IDLE_MODE;
         endcase 
     end
 end
