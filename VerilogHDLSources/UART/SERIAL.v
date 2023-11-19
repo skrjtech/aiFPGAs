@@ -1,11 +1,7 @@
+`include "source/uart.inc"
 
-`ifdef SIMULATION
-    `define SCYCLE 100
-    `define BAUDRATE 24
-`else 
-    `define SCYCLE 48_000_000
-    `define BAUDRATE 9600
-`endif 
+`define SCYCLE 50000000
+`define BAUDRATE 115200
 
 module SERIAL (
     input  wire       clk   ,
@@ -15,43 +11,31 @@ module SERIAL (
     output wire [7:0] leds
 );
 
-    wire [7:0]  txdata,  rxdata;
-    wire        txstart, rxcatch;
-    wire        txbusy,  rxbusy;
-    wire        txdone,  rxdone;
+    wire clk50;
+    PLL uPll (clk, clk50);
+
+    wire [7:0] txdata, rxdata;
+    wire txbusy, txdone;
+    wire rxbusy, rxdone;
+    wire sec1pos, txstart;
+
     assign leds = rxdata;
+
     UART #(
-        .SCYCLE     (`SCYCLE    ),
-        .BAUDRATE   (`BAUDRATE  )
-    ) uUart (
-        .CLK        (clk48      ),
-        .RESET      (reset      ),
-        .TX         (tx         ),
-        .TXDATA     (txdata     ),
-        .TXSTART    (txstart    ),
-        .TXBUSY     (txbusy     ),
-        .TXDONE     (txdone     ),
-        .RX         (rx         ),
-        .RXDATA     (rxdata     ),
-        .RXCATCH    (rxcatch    ),
-        .RXBUSY     (rxbusy     ),
-        .RXDONE     (rxdone     )
+        .SCYCLE     (`SCYCLE   ), 
+        .BAUDRATE   (`BAUDRATE )
+    ) uUART (
+        .CLK        (clk50     ),
+        .RESET      (reset     ),
+        .TX         (tx        ),
+        .TXDATA     (rxdata    ),
+        .TXSTART    (rxdone   ),
+        .TXBUSY     (txbusy    ),
+        .TXDONE     (txdone    ),
+        .RX         (rx        ),
+        .RXDATA     (rxdata    ),
+        .RXBUSY     (rxbusy    ),
+        .RXDONE     (rxdone    )
     );
 
-    wire pos1sec;
-    assign txstart = pos1sec;
-    COUNTER #(
-        .SCYCLE (`SCYCLE )
-    ) uCounter (
-        .CLK    (clk        ),
-        .RESET  (reset      ),
-        .COUT   (pos1sec    )
-    );
-    GEN8BITDATA uGen (
-        .CLK        (clk        ),
-        .RESET      (reset      ),
-        .SEC1POS    (pos1sec    ),
-        .DATA       (txdata     )
-    );
-    
 endmodule
