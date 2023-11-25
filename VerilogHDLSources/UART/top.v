@@ -1,9 +1,10 @@
 
 module Top (
-    input wire       clk, reset,
-    input wire       tx, txstart, txbusy, txdone,
-    input wire       rx, rxbusy, rxdone,
-    input wire [7:0] txdata, rxdata
+    input wire        clk, reset,
+    input wire        tx, txstart, txbusy, txdone,
+    input wire        rx, rxbusy, rxdone,
+    input wire  [7:0] txdata, 
+    output wire [7:0] rxdata
 );
 
     UART #(
