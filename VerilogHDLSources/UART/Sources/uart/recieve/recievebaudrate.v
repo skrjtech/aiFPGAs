@@ -1,17 +1,17 @@
 
-`include "../states.v"
+`include "../uart_state.v"
 
 module RECIEVEBAUDRATE #(
     parameter 
         SCYCLE   = 50_000_000,
         BAUDRATE = 9600
 ) (
-    input  wire       CLK    ,
-    input  wire       RESET  ,
-    input  wire [1:0] STATE  ,
-    input  wire       START  ,
-    output wire       BCLK   ,
-    output wire       BREAK
+    input  wire CLK    ,
+    input  wire RESET  ,
+    input  wire STATE  ,
+    input  wire START  ,
+    output wire BCLK   ,
+    output wire BREAK
 );
 
 localparam BDR      = SCYCLE / BAUDRATE;    // Baudrate
@@ -35,7 +35,6 @@ always @(posedge CLK, negedge RESET) begin
         case (STATE)
             `IDLE_MODE: BCNT <= (~START) ? BCNT + 1 : 0;
             `BUSY_MODE: BCNT <= (BPOS  ) ? 0 : BCNT + 1;
-            `DONE_MODE: BCNT <= 0;
             default:    BCNT <= 0;
         endcase
     end 

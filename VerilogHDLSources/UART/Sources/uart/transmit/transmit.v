@@ -1,9 +1,9 @@
-`include "../states.v"
+`include "../uart_state.v"
 
 module TRANSMIT (
     input  wire       CLK     ,
     input  wire       RESET   ,
-    input  wire [1:0] STATE   ,
+    input  wire       STATE   ,
     input  wire       START   ,
     input  wire       BCLK    ,
     input  wire       BREAK   ,
@@ -24,7 +24,6 @@ always @(posedge CLK, negedge RESET) begin
         case (STATE)
             `IDLE_MODE: data <= (START) ? {1'b1, TXDATA, 1'b0}  : 10'hFF;
             `BUSY_MODE: data <= (BCLK ) ? {1'b1, data[9:1]} : data;
-            `DONE_MODE: data <= 10'hFF;
             default:    data <= 10'hFF;
         endcase
     end
@@ -39,7 +38,6 @@ always @(posedge CLK, negedge RESET) begin
         case (STATE)
             `IDLE_MODE: TXBUSY <= (START) ? 1'b1 : 1'b0;
             `BUSY_MODE: TXBUSY <= (BREAK) ? 1'b0 : 1'b1;
-            `DONE_MODE: TXBUSY <= 1'b0;
             default:    TXBUSY <= 1'b0;
         endcase
     end         
@@ -54,7 +52,6 @@ always @(posedge CLK, negedge RESET) begin
        case (STATE)
             `IDLE_MODE: TXDONE <= 1'b0;
             `BUSY_MODE: TXDONE <= (BREAK) ? 1'b1 : 1'b0;
-            `DONE_MODE: TXDONE <= 1'b0;
             default:    TXDONE <= 1'b0;
         endcase 
     end

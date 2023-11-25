@@ -16,7 +16,7 @@ module TXD #(
     output wire       TXDONE
 );
 
-wire [1:0] txstate;
+wire txstate;
 wire txbclk, txbreak;
 TRANSMITSTATE uTransmitState (
     .CLK        (CLK         ),

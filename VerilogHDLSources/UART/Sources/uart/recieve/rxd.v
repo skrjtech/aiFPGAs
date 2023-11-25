@@ -17,7 +17,7 @@ module RXD #(
 
 );
 
-wire [1:0] rxstate;
+wire rxstate;
 wire rxbclk, rxbreak;
 RECIEVESTATE uRecieveState (
     .CLK    (CLK     ),
