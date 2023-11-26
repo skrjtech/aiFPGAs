@@ -10,21 +10,34 @@ module TRANSMIT (
     input  wire [7:0] TXDATA  ,
     output reg        TXBUSY  ,
     output reg        TXDONE  ,
-    output wire       TX
+    output reg        TX
 );
 
-reg [9:0] data;
-assign TX = data[0];
+reg [8:0] data;
+// assign TX = data[0];
+////////////////
+// TXSEND 
+////////////////
+always @(posedge CLK, negedge RESET) begin
+    if (~RESET) TX <= 1'b1;
+    else begin 
+        case (STATE)
+            `IDLE_MODE: TX <= (START) ? 1'b0    : 1'b1;
+            `BUSY_MODE: TX <= (BCLK ) ? data[0] : TX;
+            default:    TX <= 1'b1;
+        endcase
+    end
+end
 ////////////////
 // TXDATA 
 ////////////////
 always @(posedge CLK, negedge RESET) begin
-    if (~RESET) data <= 10'hFF;
+    if (~RESET) data <= 9'hFF;
     else begin 
         case (STATE)
-            `IDLE_MODE: data <= (START) ? {1'b1, TXDATA, 1'b0}  : 10'hFF;
-            `BUSY_MODE: data <= (BCLK ) ? {1'b1, data[9:1]} : data;
-            default:    data <= 10'hFF;
+            `IDLE_MODE: data <= (START) ? {1'b1, TXDATA}    : 9'hFF;
+            `BUSY_MODE: data <= (BCLK ) ? {1'b1, data[8:1]} : data;
+            default:    data <= 9'hFF;
         endcase
     end
 end

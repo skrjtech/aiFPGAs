@@ -7,14 +7,14 @@ module RECIEVE (
     input  wire       BCLK    ,
     input  wire       BREAK   ,
     input  wire       RX      ,
-    output reg  [7:0] RXDATA  ,
+    output reg [7:0] RXDATA  ,
     output reg        RXBUSY  ,
     output reg        RXDONE
 );
 
 reg [9:0] data = 10'h00;
-always @(posedge BREAK) begin
-    RXDATA <= data[8:1];
+always @(*) begin
+    if (RXBUSY) RXDATA <= data[8:1];
 end
 ////////////////
 // RXDATA 

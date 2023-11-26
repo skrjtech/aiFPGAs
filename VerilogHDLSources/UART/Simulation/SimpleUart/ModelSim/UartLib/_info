@@ -1,0 +1,285 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/1.Archive/Projects/aiFPGAs/VerilogHDLSources/UART/Simulation/SimpleUart/ModelSim
+vRECIEVE
+Z1 !s110 1701002626
+!i10b 1
+!s100 Ye]A5c]cPkIf3YE7oH[KO0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I;Udl1Y`9:o:MdomSk1z0M1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1700985499
+8..\..\..\..\UART\Sources\uart\recieve\recieve.v
+F..\..\..\..\UART\Sources\uart\recieve\recieve.v
+!i122 0
+L0 3 59
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1701002626.000000
+!s107 ..\..\..\..\UART\Sources\uart\recieve\recievebaudrate.v|..\..\..\..\UART\Sources\uart\recieve\recievestate.v|..\..\..\..\UART\Sources\uart\recieve\..\uart_state.v|..\..\..\..\UART\Sources\uart\recieve\recieve.v|../../../../UART/Sources/uart/recieve/rxd.v|..\..\..\..\UART\Sources\uart\transmit\transmitbaudrate.v|..\..\..\..\UART\Sources\uart\transmit\transmitstate.v|..\..\..\..\UART\Sources\uart\transmit\..\uart_state.v|..\..\..\..\UART\Sources\uart\transmit\transmit.v|../../../../UART/Sources/uart/transmit/txd.v|../../../../UART/Sources/uart/uart.v|../../../top.v|../TestBench/tb.v|
+Z6 !s90 -reportprogress|300|+define+UART|-vlog01compat|-work|UartWork|-f|../TestBench/flist.txt|
+!i113 1
+Z7 o-vlog01compat -work UartWork
+Z8 !s92 +define+UART -vlog01compat -work UartWork +define+SIMULATION +incdir+../TestBench +incdir+../../.. +incdir+../../../../UART/Sources/uart
+Z9 tCvgOpt 0
+n@r@e@c@i@e@v@e
+vRECIEVEBAUDRATE
+R1
+!i10b 1
+!s100 lWLM`TcM@Re8k1kPkBZ2o2
+R2
+IMYh65zd[<07d6e=3B<loR3
+R3
+R0
+w1700971148
+8..\..\..\..\UART\Sources\uart\recieve\recievebaudrate.v
+F..\..\..\..\UART\Sources\uart\recieve\recievebaudrate.v
+!i122 0
+L0 3 39
+R4
+r1
+!s85 0
+31
+R5
+Z10 !s107 ..\..\..\..\UART\Sources\uart\recieve\recievebaudrate.v|..\..\..\..\UART\Sources\uart\recieve\recievestate.v|..\..\..\..\UART\Sources\uart\recieve\..\uart_state.v|..\..\..\..\UART\Sources\uart\recieve\recieve.v|../../../../UART/Sources/uart/recieve/rxd.v|..\..\..\..\UART\Sources\uart\transmit\transmitbaudrate.v|..\..\..\..\UART\Sources\uart\transmit\transmitstate.v|..\..\..\..\UART\Sources\uart\transmit\..\uart_state.v|..\..\..\..\UART\Sources\uart\transmit\transmit.v|../../../../UART/Sources/uart/transmit/txd.v|../../../../UART/Sources/uart/uart.v|../../../top.v|../TestBench/tb.v|
+R6
+!i113 1
+R7
+R8
+R9
+n@r@e@c@i@e@v@e@b@a@u@d@r@a@t@e
+vRECIEVESTATE
+R1
+!i10b 1
+!s100 2fVZYjVL5eEOR7gT:C8R61
+R2
+IVS5UNXH5:lWSlFT9UWWSU0
+R3
+R0
+w1700971144
+8..\..\..\..\UART\Sources\uart\recieve\recievestate.v
+F..\..\..\..\UART\Sources\uart\recieve\recievestate.v
+!i122 0
+L0 3 22
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@r@e@c@i@e@v@e@s@t@a@t@e
+vRXD
+R1
+!i10b 1
+!s100 fCFA=<g[f?1``?g?FM2<o2
+R2
+I;hcI4KgaKI:D4L8jL<;BT1
+R3
+R0
+w1700971156
+8../../../../UART/Sources/uart/recieve/rxd.v
+F../../../../UART/Sources/uart/recieve/rxd.v
+!i122 0
+L0 5 49
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@r@x@d
+vtb
+R1
+!i10b 1
+!s100 8A``C28Ij0nG[`8iW_bCM0
+R2
+I2DIDz;QAhh76UJ=O0EO_10
+R3
+R0
+w1700984066
+8../TestBench/tb.v
+F../TestBench/tb.v
+!i122 0
+L0 4 58
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+vTop
+R1
+!i10b 1
+!s100 Pm1B_IQb:VM2fQ<`FFBPY1
+R2
+I^2kVCIA61KKgXFla?W3l:1
+R3
+R0
+w1700936201
+8../../../top.v
+F../../../top.v
+!i122 0
+L0 13 32
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@top
+vTRANSMIT
+R1
+!i10b 1
+!s100 <^i1?MZFBfYl6GKnPl7z]3
+R2
+I6D7Y3YVEnkNAS]]W;nP=@1
+R3
+R0
+w1700971969
+8..\..\..\..\UART\Sources\uart\transmit\transmit.v
+F..\..\..\..\UART\Sources\uart\transmit\transmit.v
+!i122 0
+L0 3 70
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@t@r@a@n@s@m@i@t
+vTRANSMITBAUDRATE
+R1
+!i10b 1
+!s100 LQZojUV3064^cm<`d@7Ok3
+R2
+IQaO9G3nV`c8PD:A3g>ASc2
+R3
+R0
+Z11 w1700892014
+8..\..\..\..\UART\Sources\uart\transmit\transmitbaudrate.v
+F..\..\..\..\UART\Sources\uart\transmit\transmitbaudrate.v
+!i122 0
+L0 3 38
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@t@r@a@n@s@m@i@t@b@a@u@d@r@a@t@e
+vTRANSMITSTATE
+R1
+!i10b 1
+!s100 4fb4KX=L]i>7ofl7Yl7mk1
+R2
+IKFNNLz2n9L<1Lk3GI^l@f3
+R3
+R0
+R11
+8..\..\..\..\UART\Sources\uart\transmit\transmitstate.v
+F..\..\..\..\UART\Sources\uart\transmit\transmitstate.v
+!i122 0
+L0 3 23
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@t@r@a@n@s@m@i@t@s@t@a@t@e
+vTXD
+R1
+!i10b 1
+!s100 nBGe6Xh36k4@iAA^Hn63R1
+R2
+I?161KAVk0=3bU1m?d@=3l2
+R3
+R0
+w1700971980
+8../../../../UART/Sources/uart/transmit/txd.v
+F../../../../UART/Sources/uart/transmit/txd.v
+!i122 0
+L0 5 51
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@t@x@d
+vUART
+R1
+!i10b 1
+!s100 GBSffl4j;nANNFE?=TBom0
+R2
+IWjfeY8W2:RJ]0V06WZTGX0
+R3
+R0
+w1700892042
+8../../../../UART/Sources/uart/uart.v
+F../../../../UART/Sources/uart/uart.v
+!i122 0
+L0 4 44
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+n@u@a@r@t

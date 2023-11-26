@@ -1,4 +1,3 @@
-
 `include "../uart_state.v"
 
 module RECIEVESTATE (
