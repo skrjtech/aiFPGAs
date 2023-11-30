@@ -7,22 +7,22 @@ Simulation Pattern
 Clock: 100
 BaudRate: 50  
 TestBench: 
-- [Uart tb.v](VerilogHDLSources/UART/Simulation/TestBench/tb.v)  
+- [Uart tb.v](VerilogHDLSources\UART\Simulation\SimpleUart\TestBench\tb.v)  
 
 ModelSim Run DO Command:  
 
-- [Transmit.do](VerilogHDLSources/UART/Simulation/ModelSim/Transmit.do)  
-- [Recieve.do](VerilogHDLSources/UART/Simulation/ModelSim/Recieve.do)  
+- [Transmit.do](VerilogHDLSources\UART\Simulation\SimpleUart\ModelSim\transmit.do)  
+- [Recieve.do](VerilogHDLSources\UART\Simulation\SimpleUart\ModelSim\recieve.do)  
 
 ★ Transmit TimingCharts  
 
-![Transmit](/VerilogHDLSources/UART/Simulation/Images/Transmit.PNG)  
+![Transmit](VerilogHDLSources\UART\Simulation\SimpleUart\Images\Transmit.PNG)  
 
 ★ Recieve TimingCharts  
 
-![Recieve](/VerilogHDLSources/UART/Simulation/Images/Recieve.PNG)  
+![Recieve](VerilogHDLSources\UART\Simulation\SimpleUart\Images\Recieve.PNG)  
 
 ★ Uart TimingCharts  
 
-![Uart](/VerilogHDLSources/UART/Simulation/Images/Uart.PNG)  
+![Uart](VerilogHDLSources\UART\Simulation\SimpleUart\Images\Uart.PNG)  
 
