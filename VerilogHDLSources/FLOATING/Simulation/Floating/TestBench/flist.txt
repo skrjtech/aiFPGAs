@@ -5,6 +5,6 @@
 
 
 ${DIR_RTL_TBCH}/tb.v
-${DIR_RTL_BODY}/Top.v
+${DIR_RTL_BODY}/top.v
 # ${DIR_RTL_INCL}/floatsample.v
 ${DIR_RTL_INCL}/floating.v
