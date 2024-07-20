@@ -1,0 +1,81 @@
+`timescale 1us/1ps
+`define SCYCLE 20
+
+`define RANDOMMAX +2147483647
+`define RANDOMMIN -2147483648
+
+module tb ();
+
+    localparam
+        MAX     = 5,
+        MIN     = 1,
+        DWIDTH  = 32,
+        
+        CORES   = 32,
+        STREAMS = 8,
+        SIZE    = CORES * DWIDTH;
+
+
+    reg clock = 1, reset = 0;
+    always #(`SCYCLE / 2) clock = ~clock;
+
+    reg                  START;
+    reg  [SIZE - 1: 0] STREAM_A;
+    reg  [SIZE - 1: 0] STREAM_B;
+    wire [DWIDTH - 1: 0] STREAM_O;
+
+    // MatrixMulSingleCore core (.CLOCK(clock), .NRESET(reset), .START(START), .STREAM_A(STREAM_A), .STREAM_B(STREAM_B), .STREAM_O(STREAM_O));
+    MatrixMul32Cores core (.CLOCK(clock), .NRESET(reset), .START(START), .STREAM_A(STREAM_A), .STREAM_B(STREAM_B), .STREAM_O(STREAM_O));
+
+    integer i;
+    initial begin
+        START = 0;
+        #(`SCYCLE * 1);
+        reset = 1;
+        START = 1;
+        for (i = 0; i < 32; i = i + 1) begin
+            STREAM_A <= {
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1)
+            };
+            STREAM_B <= {
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1),
+                itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1), itof($urandom % (5 - 1 + 1) + 1)
+            };
+            #(`SCYCLE * 1);
+        end
+
+        #(`SCYCLE * 1);
+        $stop;
+    end
+
+    function [31:0] itof;
+        input [32:0] in;
+        begin
+            case (in)
+                0: itof = 31'h0000_0000;
+                1: itof = 31'h3F80_0000;
+                2: itof = 31'h4000_0000; 
+                3: itof = 31'h4040_0000; 
+                4: itof = 31'h4080_0000; 
+                5: itof = 31'h40A0_0000; 
+                6: itof = 31'h40C0_0000; 
+                7: itof = 31'h40E0_0000; 
+                8: itof = 31'h4100_0000; 
+                9: itof = 31'h4110_0000; 
+                default: itof = 31'h0000_0000;
+            endcase
+        end
+    endfunction
+
+endmodule

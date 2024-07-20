@@ -1,0 +1,89 @@
+|TOP
+CLOCK => CLOCK.IN1
+NRESET => NRESET.IN1
+
+
+|TOP|STSource:st
+clk => clk.IN1
+reset => reset.IN1
+src_data[0] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[1] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[2] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[3] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[4] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[5] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[6] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[7] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[8] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[9] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[10] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[11] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[12] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[13] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[14] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[15] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[16] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[17] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[18] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[19] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[20] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[21] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[22] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[23] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[24] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[25] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[26] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[27] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[28] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[29] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[30] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_data[31] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_data
+src_valid[0] <= altera_avalon_st_source_bfm:st_source_bfm_0.src_valid
+src_ready => src_ready.IN1
+
+
+|TOP|STSource:st|altera_avalon_st_source_bfm:st_source_bfm_0
+clk => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+src_data[0] <= <GND>
+src_data[1] <= <GND>
+src_data[2] <= <GND>
+src_data[3] <= <GND>
+src_data[4] <= <GND>
+src_data[5] <= <GND>
+src_data[6] <= <GND>
+src_data[7] <= <GND>
+src_data[8] <= <GND>
+src_data[9] <= <GND>
+src_data[10] <= <GND>
+src_data[11] <= <GND>
+src_data[12] <= <GND>
+src_data[13] <= <GND>
+src_data[14] <= <GND>
+src_data[15] <= <GND>
+src_data[16] <= <GND>
+src_data[17] <= <GND>
+src_data[18] <= <GND>
+src_data[19] <= <GND>
+src_data[20] <= <GND>
+src_data[21] <= <GND>
+src_data[22] <= <GND>
+src_data[23] <= <GND>
+src_data[24] <= <GND>
+src_data[25] <= <GND>
+src_data[26] <= <GND>
+src_data[27] <= <GND>
+src_data[28] <= <GND>
+src_data[29] <= <GND>
+src_data[30] <= <GND>
+src_data[31] <= <GND>
+src_channel[0] <= <GND>
+src_valid[0] <= <GND>
+src_startofpacket[0] <= <GND>
+src_endofpacket[0] <= <GND>
+src_error[0] <= <GND>
+src_empty[0] <= <GND>
+src_empty[1] <= <GND>
+src_ready => ~NO_FANOUT~
+
+

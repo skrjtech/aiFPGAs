@@ -1,0 +1,52 @@
+`timescale 1us/1ps
+`define SCYCLE 20
+
+`define RANDOMMAX +2147483647
+`define RANDOMMIN -2147483648
+
+module tb ();
+
+    localparam DWIDTH = 32, WORDS = 16, SIZE = $clog2(WORDS);
+
+    reg clock = 1, reset = 0;
+    always #(`SCYCLE / 2) clock = ~clock;
+
+    integer i, j;
+
+    wire [SIZE - 1: 0] addr_i, addr_w, addr_b;
+    wire [DWIDTH - 1: 0] data_i_io, data_w_io, data_b_io;
+    DRAM #(.DWIDTH(DWIDTH), .WORDS(WORDS)) uDramI (.CLK(clock), .WE(0), .ADDR(addr_i), .DATAI(data_i_io), .DATAO(data_i_io));
+    DRAM #(.DWIDTH(DWIDTH), .WORDS(WORDS)) uDramW (.CLK(clock), .WE(0), .ADDR(addr_w), .DATAI(data_w_io), .DATAO(data_w_io));
+    DRAM #(.DWIDTH(DWIDTH), .WORDS(WORDS)) uDramB (.CLK(clock), .WE(0), .ADDR(addr_b), .DATAI(data_b_io), .DATAO(data_b_io));
+
+    initial begin
+        for (i = 0; i < WORDS; i = i + 1) begin
+            uDramI.MEM[i] = ($urandom % (5 - 1 + 1)) + 1;
+            uDramW.MEM[i] = ($urandom % (5 - 1 + 1)) + 1;
+            uDramB.MEM[i] = ($urandom % (5 - 1 + 1)) + 1;
+            $display("Step(%d): uDramI.MEM[%d] x uDramW.MEM[%d] + uDramB.MEM[%d] = %f", i, i, i, i, uDramI.MEM[i] * uDramW.MEM[i] + uDramB.MEM[i]);
+        end
+    end
+
+
+    reg start = 0;
+    NeuronCore #(.DWIDTH(DWIDTH), .WORDS(WORDS), .SIZE(SIZE)) uNeuron (
+        .CLK(clock), .RESET(reset), .START(start), 
+        .ADDR_I(addr_i), .ADDR_W(addr_w), .ADDR_B(addr_b), 
+        .INPUT(data_i_io), .WEIGHT(data_w_io), .BIAS(data_b_io)
+    );
+    
+    initial begin
+
+        #(`SCYCLE * 1);
+
+        reset = 1;
+        start = 1;
+
+        #(`SCYCLE * (WORDS + WORDS * 0.1));
+
+        $stop;
+
+    end
+
+endmodule

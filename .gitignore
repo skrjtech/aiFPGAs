@@ -1,0 +1,5 @@
+.docker/Quartus
+.docker/Dockerfile.init
+.docker/Dockerfile.org.org
+.docker/installer.exp
+.docker/quartusprime.sh

@@ -1,0 +1,20 @@
+{
+	"name": "FPGA Projects",
+	"dockerComposeFile": "../.docker/docker-compose.yml",
+	"service": "fpgadev",
+	"workspaceFolder": "/Workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				"twxs.cmake",
+				"ms-vscode.cmake-tools",
+				"hediet.vscode-drawio",
+				"ms-python.python",
+				"mshr-h.veriloghdl"
+			]
+		}
+	}
+}
