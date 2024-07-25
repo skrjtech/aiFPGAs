@@ -1,22 +1,22 @@
 # 基本シカトファイル形式
-*.ini
-*.wlf
-*.qdb
-*.qtl
-*.o
+**/*.ini
+**/*.wlf
+**/*.qdb
+**/*.qtl
+**/*.o
 **/*Lib/
 **/db/
 **/incremental_db/
-*.qsys_edit
-*.qsys
-*.sopcinfo
+**/*.qsys_edit
+**/*.qsys
+**/*.sopcinfo
 **/ips/
 **/output_files/
 **/simulation/
-*.qpf
-*.qsf
-*.qws
-*.vstf
+**/*.qpf
+**/*.qsf
+**/*.qws
+**/*.vstf
 transcript
 # 未完成実装環境
 .devcontainer/*
