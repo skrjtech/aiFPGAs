@@ -1,0 +1,6 @@
+Info (10281): Verilog HDL Declaration information at uart.v(18): object "TX" differs only in case from object "tx" in the same scope File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/VerilogHDL/uart.v Line: 18
+Info (10281): Verilog HDL Declaration information at uart.v(15): object "TXBUSY" differs only in case from object "txbusy" in the same scope File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/VerilogHDL/uart.v Line: 15
+Info (10281): Verilog HDL Declaration information at uart.v(16): object "TXDONE" differs only in case from object "txdone" in the same scope File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/VerilogHDL/uart.v Line: 16
+Info (10281): Verilog HDL Declaration information at uart.v(217): object "RXBUSY" differs only in case from object "rxbusy" in the same scope File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/VerilogHDL/uart.v Line: 217
+Info (10281): Verilog HDL Declaration information at uart.v(219): object "RXDONE" differs only in case from object "rxdone" in the same scope File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/VerilogHDL/uart.v Line: 219
+Info (10281): Verilog HDL Declaration information at uart.v(216): object "RXDATA" differs only in case from object "rxdata" in the same scope File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/VerilogHDL/uart.v Line: 216

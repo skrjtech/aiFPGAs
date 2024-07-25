@@ -1,0 +1,1977 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/ModelSim/UART/Simulation
+vASYNC_FIFO_EMPTY
+Z1 !s110 1721931014
+!i10b 1
+!s100 j3BLQ84dAdec2S6[EV7W`3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I;4XnM=J3Y=2=1;@OodlhC3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1721745118
+Z5 8../../../VerilogHDL/fifo.v
+Z6 F../../../VerilogHDL/fifo.v
+!i122 59
+L0 68 27
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1721931014.000000
+Z9 !s107 ../top.v|../TestBench/uart_tb.v|../TestBench/uart_src_sink_tb.v|../TestBench/uart_controller_tb.v|../TestBench/tb.v|../TestBench/cpu_uart_tx_tb.v|../../../VerilogHDL/uart.v|../../../VerilogHDL/typecast.v|../../../VerilogHDL/timer.v|../../../VerilogHDL/stream.v|../../../VerilogHDL/random.v|../../../VerilogHDL/neuron.v|../../../VerilogHDL/memory.v|../../../VerilogHDL/matrix.v|../../../VerilogHDL/master_slave.v|../../../VerilogHDL/gen8bitdata.v|../../../VerilogHDL/ftypes.v|../../../VerilogHDL/floating.v|../../../VerilogHDL/fifo.v|../../../VerilogHDL/counter.v|../../../VerilogHDL/chattering.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|UartWork|-f|../TestBench/_flist.txt|
+!i113 1
+Z11 o-vlog01compat -work UartWork
+Z12 !s92 -vlog01compat -work UartWork +incdir+../../../VerilogHDL +incdir+../TestBench +incdir+..
+Z13 tCvgOpt 0
+n@a@s@y@n@c_@f@i@f@o_@e@m@p@t@y
+vASYNC_FIFO_FULL
+R1
+!i10b 1
+!s100 =1mOGjLLJdS>dko<[@`?_1
+R2
+IG>oO4W6U7nMk[3?TMk@>D0
+R3
+R0
+R4
+R5
+R6
+!i122 59
+L0 40 27
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@a@s@y@n@c_@f@i@f@o_@f@u@l@l
+vASYNC_FIFO_MEMORY
+R1
+!i10b 1
+!s100 ;:dHhSMiGC6lz`8T[:O;X3
+R2
+I3aUUKZ`;42h2aokBDm7Qe3
+R3
+R0
+R4
+R5
+R6
+!i122 59
+L0 96 19
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@a@s@y@n@c_@f@i@f@o_@m@e@m@o@r@y
+vAsyncFIFO
+R1
+!i10b 1
+!s100 mXU?We4mW=7[Cf>B<L7jA2
+R2
+IDPah5RlVM=;idVj2_<Pdl0
+R3
+R0
+R4
+R5
+R6
+!i122 59
+L0 1 38
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@async@f@i@f@o
+vBRAM
+R1
+!i10b 1
+!s100 jMP3CD^]JS1Si9E53j6z>1
+R2
+IBV=YPYB@YU>LBcW9bfCe_3
+R3
+R0
+Z14 w1721497823
+Z15 8../../../VerilogHDL/memory.v
+Z16 F../../../VerilogHDL/memory.v
+!i122 59
+L0 28 26
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@b@r@a@m
+vChattering
+R1
+!i10b 1
+!s100 D0>TSoE:3XmDj=oaY?`[00
+R2
+ITI=P2X<eVZgiNS<AfzRGS1
+R3
+R0
+w1721744540
+8../../../VerilogHDL/chattering.v
+F../../../VerilogHDL/chattering.v
+!i122 59
+L0 3 39
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@chattering
+vCounter
+R1
+!i10b 1
+!s100 iZU0ceGzBRz@6_O1L?J[g0
+R2
+IVj[ToNP65ORURO7@U`MJ03
+R3
+R0
+w1721744453
+8../../../VerilogHDL/counter.v
+F../../../VerilogHDL/counter.v
+!i122 59
+L0 3 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@counter
+vcpu_uart_tx_tb
+R1
+!i10b 1
+!s100 ehLeE691EBgh7g?Q2CG001
+R2
+I=@TGz?=SaSdkB`XVi98Nz3
+R3
+R0
+w1721770275
+8../TestBench/cpu_uart_tx_tb.v
+F../TestBench/cpu_uart_tx_tb.v
+!i122 59
+L0 18 111
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vDOUBLE_ADD
+R1
+!i10b 1
+!s100 j^gni08kYL8=S@;XC9K[m1
+R2
+IJJFbJeO5<H:fcK5HjYS540
+R3
+R0
+Z17 w1721758021
+Z18 8../../../VerilogHDL/ftypes.v
+Z19 F../../../VerilogHDL/ftypes.v
+!i122 59
+L0 30 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@d@o@u@b@l@e_@a@d@d
+vDOUBLE_DIV
+R1
+!i10b 1
+!s100 3QidNRH84e<nieAYiDW]@3
+R2
+IRYHiZZO7NVM:1WZUNHgC43
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 105 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@d@o@u@b@l@e_@d@i@v
+vDOUBLE_DIV_WITH_REM
+R1
+!i10b 1
+!s100 kNg_[In9HSW@5X:P2cicN0
+R2
+I4K[lSF0O0DVlTOeFdVB=n0
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 130 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@d@o@u@b@l@e_@d@i@v_@w@i@t@h_@r@e@m
+vDOUBLE_MUL
+R1
+!i10b 1
+!s100 7kh?>RX6afCWBIP:mDWMa1
+R2
+I16@GQ@a9Uc<Sj:n_39GN10
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 80 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@d@o@u@b@l@e_@m@u@l
+vDOUBLE_SUB
+R1
+!i10b 1
+!s100 _HlAkMe90hn8__S<>4Dc60
+R2
+IVDo;<V>F<HDA3PfzcY11:0
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 55 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@d@o@u@b@l@e_@s@u@b
+vDRAM
+R1
+!i10b 1
+!s100 W[iLMi_`M0f_SIZl0>Mni3
+R2
+ICiH2FFTSb5zIEdTR;2NOl0
+R3
+R0
+R14
+R15
+R16
+!i122 59
+L0 3 23
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@d@r@a@m
+vDualBRAM
+R1
+!i10b 1
+!s100 @489]>d6d>ZZB>h7P0Pk92
+R2
+I^Ef:Y`1P66e_TVdY;88Lj3
+R3
+R0
+R14
+R15
+R16
+!i122 59
+L0 56 41
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@dual@b@r@a@m
+vFloat2Int
+R1
+!i10b 1
+!s100 iz=<hdS_j5a;[2:zbkk?I1
+R2
+IWmd^IZM_P^T8[o:5OUQ302
+R3
+R0
+Z20 w1721758062
+Z21 8../../../VerilogHDL/typecast.v
+Z22 F../../../VerilogHDL/typecast.v
+!i122 59
+L0 118 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@float2@int
+vFLOAT_ADD
+R1
+!i10b 1
+!s100 @iYFnQc@<zmbdMljW1gQj1
+R2
+In_zhMI29KmBnaEKP_9Y3B2
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 14 15
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t_@a@d@d
+vFLOAT_DIV
+R1
+!i10b 1
+!s100 Z;?7[f>j>JW5?TEM0na6A0
+R2
+Ioil=n?Ao8BlKPonjkazgV0
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 97 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t_@d@i@v
+vFLOAT_DIV_WITH_REM
+R1
+!i10b 1
+!s100 75;?^b3=YnD:Hb^i1<jF11
+R2
+IjH;RioAkCE:B^e57a65HX3
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 122 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t_@d@i@v_@w@i@t@h_@r@e@m
+vFLOAT_MUL
+R1
+!i10b 1
+!s100 gmG]:]FcOFadRE`Zd^j5Q2
+R2
+IAAc0Ro7DHj?g^Dk@dakB33
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 72 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t_@m@u@l
+vFLOAT_SUB
+R1
+!i10b 1
+!s100 _K^FVTQ6dn?k>7lQfYL6O3
+R2
+IPiNm]ZX0bWgOzoLW<?ZF80
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 47 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t_@s@u@b
+vFLOATING_32BIT_ADD
+R1
+!i10b 1
+!s100 n]@8HPljkD6WcfiX3SMe[2
+R2
+In_^QHD;mMbn2AcH[iP<jP0
+R3
+R0
+Z23 w1721487855
+Z24 8../../../VerilogHDL/floating.v
+Z25 F../../../VerilogHDL/floating.v
+!i122 59
+L0 110 8
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t@i@n@g_32@b@i@t_@a@d@d
+vFLOATING_32BIT_ADD_SUB
+R1
+!i10b 1
+!s100 [SDBK8^U>Yzg]7GUQ5eNT0
+R2
+IVGdiJ:gm<c_H<DX9cV=l01
+R3
+R0
+R23
+R24
+R25
+!i122 59
+L0 2 107
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t@i@n@g_32@b@i@t_@a@d@d_@s@u@b
+vFLOATING_32BIT_DIV
+R1
+!i10b 1
+!s100 8=gZV4@03egkXU:MI@4h53
+R2
+Id0j=jU2bUVj8F2T8i]9LZ0
+R3
+R0
+R23
+R24
+R25
+!i122 59
+L0 203 74
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t@i@n@g_32@b@i@t_@d@i@v
+vFLOATING_32BIT_MUL
+R1
+!i10b 1
+!s100 J=`MUcmk4feM`8AfmGBb[1
+R2
+I0EGK0P9T[1Fd0HPfe:h<Q0
+R3
+R0
+R23
+R24
+R25
+!i122 59
+L0 128 74
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t@i@n@g_32@b@i@t_@m@u@l
+vFLOATING_32BIT_SUB
+R1
+!i10b 1
+!s100 7K_H<S1dG35i1HNY?<6f]2
+R2
+IRielLlBm4L;1<z@XCn9b92
+R3
+R0
+R23
+R24
+R25
+!i122 59
+L0 119 8
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@f@l@o@a@t@i@n@g_32@b@i@t_@s@u@b
+vFloatLong2Int
+R1
+!i10b 1
+!s100 T2FPPPb3n18OIjZO>Hl0S0
+R2
+IafeTT6PSffCnRVRc1C=gj2
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 141 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@float@long2@int
+vfrom_host_to_kenel
+R1
+!i10b 1
+!s100 f^5l>C;AS_;8EI91XK[B_2
+R2
+I6>ggjADzhNUT4AJI0JhNk1
+R3
+R0
+Z26 w1721929485
+Z27 8../TestBench/uart_src_sink_tb.v
+Z28 F../TestBench/uart_src_sink_tb.v
+!i122 59
+L0 97 27
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vGEN8BITDATA
+R1
+!i10b 1
+!s100 N`mZNNe2EZKYn=3F?80K`2
+R2
+IFBLM[h[Pb@kfeE01m8nk?1
+R3
+R0
+w1721497444
+8../../../VerilogHDL/gen8bitdata.v
+F../../../VerilogHDL/gen8bitdata.v
+!i122 59
+L0 2 17
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@g@e@n8@b@i@t@d@a@t@a
+vHALF_ADD
+R1
+!i10b 1
+!s100 j0:eLV`0SlePV1HMGB6H93
+R2
+IN<OoU^KIL9aZGH7Y[_?ez1
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 6 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@h@a@l@f_@a@d@d
+vHALF_DIV
+R1
+!i10b 1
+!s100 NDD_RZ2h6khSWa1LA0ZRe2
+R2
+IZizSZe?<a>]K;_RF7PGBX1
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 89 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@h@a@l@f_@d@i@v
+vHALF_DIV_WITH_REM
+R1
+!i10b 1
+!s100 MSb^^XY8SE4Y?:j;dO8]d3
+R2
+INE3UT974PiM4fbSD2APJ32
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 114 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@h@a@l@f_@d@i@v_@w@i@t@h_@r@e@m
+vHALF_MUL
+R1
+!i10b 1
+!s100 jF@[cBN0K^g0n]X`:hU:E0
+R2
+IDMUYa6S2gPS=bN0_>SAn80
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 64 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@h@a@l@f_@m@u@l
+vHALF_SUB
+R1
+!i10b 1
+!s100 cjPY75B7L^_TZ<4;ZgBB92
+R2
+IfU:SQnbMj7MYJX53UVmA^2
+R3
+R0
+R17
+R18
+R19
+!i122 59
+L0 39 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@h@a@l@f_@s@u@b
+vHalfFloat2Int
+R1
+!i10b 1
+!s100 1ecB@Sg?iKQK_45Km0BXd0
+R2
+INg`DJ_Ol5IN34InJ1JiM43
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 164 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@half@float2@int
+vHost
+!s110 1721926065
+!i10b 1
+!s100 l4:J4WG05F^KUiiQL=VZ20
+R2
+IUdBFCf5M?0_`F:NHgXW^U0
+R3
+R0
+w1721925814
+Z29 8../TestBench/uart_controller_tb.v
+Z30 F../TestBench/uart_controller_tb.v
+!i122 9
+L0 75 82
+R7
+r1
+!s85 0
+31
+!s108 1721926064.000000
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@host
+vhost_to_kernel
+R1
+!i10b 1
+!s100 IfI:jb0kGVnFaS?b5<NIH2
+R2
+I[S690Y<bl_dUOzaJcV^nH0
+R3
+R0
+R26
+R27
+R28
+!i122 59
+L0 51 43
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vInt2Float
+R1
+!i10b 1
+!s100 OhGUo6baR`g8DYN@^]UeT3
+R2
+IRa<SRh6>:jdeH@SSh0Gah2
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 49 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@int2@float
+vInt2FloatLong
+R1
+!i10b 1
+!s100 YcaV?>gn59Z^O@5Q9YLQJ3
+R2
+IbWEcJTRm]VQ3WHcccMchI3
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 72 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@int2@float@long
+vInt2HalfFloat
+R1
+!i10b 1
+!s100 zEJ0CQhfehmNP9MnEhY5>1
+R2
+ImUG_[Co^?G^CM>HT^^Q:d1
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 95 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@int2@half@float
+vInt2Long
+R1
+!i10b 1
+!s100 NNnAbm_CC;b<aeAYiFoBU1
+R2
+IMUc]QP3SZ1HOKNahXBgHC0
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 3 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@int2@long
+vKernel
+R1
+!i10b 1
+!s100 RTI=>o61J=kM83AkB23?12
+R2
+IJ20Z8>cMBQ5zEe:l4SfiF1
+R3
+R0
+Z31 w1721931011
+R29
+R30
+!i122 59
+L0 102 82
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@kernel
+vLATCH_MUL
+R1
+!i10b 1
+!s100 B^]24bVO8a=OP2?j4eOP:3
+R2
+IdN4LY3=Nc<h0fHVEKg4zl1
+R3
+R0
+Z32 w1721487883
+Z33 8../../../VerilogHDL/matrix.v
+Z34 F../../../VerilogHDL/matrix.v
+!i122 59
+L0 1 24
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@l@a@t@c@h_@m@u@l
+vLong2Int
+R1
+!i10b 1
+!s100 MeG:CQ=>`>5iO0_=Z?GAb2
+R2
+I=SN4DCl2hVNi_1^zD7=W>2
+R3
+R0
+R20
+R21
+R22
+!i122 59
+L0 26 20
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@long2@int
+vMatrixMul16Cores
+R1
+!i10b 1
+!s100 <;R@2kIL1ggY^Bb[?kL@L1
+R2
+I2IcYJY0OK;;EOK_fD8]P60
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 200 26
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul16@cores
+vMatrixMul2Cores
+R1
+!i10b 1
+!s100 D41R;JFZP`PMHHBEdHzVV2
+R2
+IgIaRFAI7XMfOHz`^cPnFg0
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 96 37
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul2@cores
+vMatrixMul32Cores
+R1
+!i10b 1
+!s100 FnlDVf^Sj:3@:0jB<enTX3
+R2
+ICl0?F:aFT;2>JSJX[`[5>1
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 227 26
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul32@cores
+vMatrixMul4Cores
+R1
+!i10b 1
+!s100 YH_^=LD3PQnjYl^REijgR1
+R2
+IVoo5PM[K]U:R;9k_d8iDg0
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 134 38
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul4@cores
+vMatrixMul8Cores
+R1
+!i10b 1
+!s100 S[l9@ASKBkGJVaOHDzTz03
+R2
+I947e:bTF;JCS9Z[4BSF;M0
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 173 26
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul8@cores
+vMatrixMulManyCores
+R1
+!i10b 1
+!s100 SgN^B0OCa@2MFcNGG1j912
+R2
+Il=^VI>P8H3F4EW`>=c1Tm2
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 254 26
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul@many@cores
+vMatrixMulSingleCore
+R1
+!i10b 1
+!s100 5dfCL<LoI:HoI3?EeIZUh1
+R2
+IVfGOgQ8h0Hh5h6;IEDa<T3
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 61 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@matrix@mul@single@core
+vNeuron
+R1
+!i10b 1
+!s100 U^g9:nE2k<3338MHc38AU1
+R2
+IToF0:kkdc;8M?]E>3J2h=2
+R3
+R0
+R32
+Z35 8../../../VerilogHDL/neuron.v
+Z36 F../../../VerilogHDL/neuron.v
+!i122 59
+L0 43 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@neuron
+vNeuronCore
+R1
+!i10b 1
+!s100 aeM4C2f4L[Lf6IKlCj:mA1
+R2
+IeNO4kmM^@BG`3e^YK_P5A0
+R3
+R0
+R32
+R35
+R36
+!i122 59
+L0 2 40
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@neuron@core
+vRandom
+R1
+!i10b 1
+!s100 Dzh<[J<S=41WJX:B:N:eI1
+R2
+IKkGTMhilz_F@WoCTAhoNM0
+R3
+R0
+w1721745083
+8../../../VerilogHDL/random.v
+F../../../VerilogHDL/random.v
+!i122 59
+L0 4 23
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@random
+vRecieve
+R1
+!i10b 1
+!s100 ee6S0kaooAHZe@^Ooh_`n0
+R2
+IJ_U=M3`bYGlP>1C4SR?W21
+R3
+R0
+Z37 w1721930903
+Z38 8../../../VerilogHDL/uart.v
+Z39 F../../../VerilogHDL/uart.v
+!i122 59
+L0 208 71
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@recieve
+vRecieveBaudrate
+R1
+!i10b 1
+!s100 kJ07U=>hXZ9bDGE2I83B@2
+R2
+I]CzVGXRN?Ak6KNdZHlQ5;3
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 282 40
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@recieve@baudrate
+vRecieveState
+R1
+!i10b 1
+!s100 RJ>^GF62`D8IVj[TiGYG73
+R2
+I:jAMTGeTZNIPTYHHbE@dm1
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 325 25
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@recieve@state
+vRxD
+R1
+!i10b 1
+!s100 F_]IaLSW8YnXzcoo@lMnf1
+R2
+If<O=Yin;d@O]aIcTHV`aL3
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 353 49
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@rx@d
+vrxd_tb
+R1
+!i10b 1
+!s100 o9<=KoVjK0_RdS[dEC:nQ1
+R2
+I`<J]AQ^HflBQZX_S3F2OI0
+R3
+R0
+Z40 w1721912653
+Z41 8../TestBench/uart_tb.v
+Z42 F../TestBench/uart_tb.v
+!i122 59
+L0 114 23
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vSlave
+R1
+!i10b 1
+!s100 <aUXMagET_zZf0kz9DD:?0
+R2
+IkJLEm60F]A=l^VmoIKEUA2
+R3
+R0
+w1721758444
+8../../../VerilogHDL/master_slave.v
+F../../../VerilogHDL/master_slave.v
+!i122 59
+L0 2 16
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@slave
+vStreamer
+R1
+!i10b 1
+!s100 28Ve8G7i8bRFW0hfoPH8L3
+R2
+I2GkF=YbLn8_PzVX@dABBF0
+R3
+R0
+R32
+8../../../VerilogHDL/stream.v
+F../../../VerilogHDL/stream.v
+!i122 59
+L0 2 39
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@streamer
+vSWITCH_ADD
+R1
+!i10b 1
+!s100 W@jjCj4;65F=;C7g;fE<50
+R2
+IX0eR]68z:I88jPnT`_:jT0
+R3
+R0
+R32
+R33
+R34
+!i122 59
+L0 26 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@s@w@i@t@c@h_@a@d@d
+vSYNC_FIFO_READ2WRITE
+R1
+!i10b 1
+!s100 B6Db[8c@1n=8H_39UOP5Q2
+R2
+I4E`DYgY@JSGZa1EQ0H2C>1
+R3
+R0
+R4
+R5
+R6
+!i122 59
+L0 135 18
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@s@y@n@c_@f@i@f@o_@r@e@a@d2@w@r@i@t@e
+vSYNC_FIFO_WRITE2READ
+R1
+!i10b 1
+!s100 83f?I8Vzf>Mj3N8;HMlK^0
+R2
+IVWSIZSj5K;4^3^0h4AaQ=2
+R3
+R0
+R4
+R5
+R6
+!i122 59
+L0 116 18
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@s@y@n@c_@f@i@f@o_@w@r@i@t@e2@r@e@a@d
+vtb
+R1
+!i10b 1
+!s100 SV;gYd6Qie>58bddWHzjI1
+R2
+I_f7Z>kn9QC]5D3T=X=<5h0
+R3
+R0
+w1721770238
+8../TestBench/tb.v
+F../TestBench/tb.v
+!i122 59
+L0 13 49
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vTimer
+R1
+!i10b 1
+!s100 Bh>_j8g<6iHnI>RaNR]GT0
+R2
+I0LQz?6YfU[N4EJec;eO2>0
+R3
+R0
+w1721744362
+8../../../VerilogHDL/timer.v
+F../../../VerilogHDL/timer.v
+!i122 59
+L0 3 48
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@timer
+vTop
+R1
+!i10b 1
+!s100 oYdmXEI<W3Sc93VE]d2jl1
+R2
+Im3e]:h9aE[34dXV_PlVjI3
+R3
+R0
+w1721925672
+8../top.v
+F../top.v
+!i122 59
+L0 2 36
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@top
+vTransmit
+R1
+!i10b 1
+!s100 `E?4Ea;]El1GdF7bQ?5ZQ0
+R2
+Ih66eYD_J;VOWF`1J=;n]:1
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 7 75
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@transmit
+vTransmitBaudrate
+R1
+!i10b 1
+!s100 Je`S75Il473LMCI6bbGV`1
+R2
+I^;ck_>>0D[0WD4RYOJTUH3
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 85 39
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@transmit@baudrate
+vTransmitState
+R1
+!i10b 1
+!s100 K5WLXF7iYh4LMflg[O_jO2
+R2
+IW[8Mbz3hRObmA:Li;EX]13
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 127 24
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@transmit@state
+vTxD
+R1
+!i10b 1
+!s100 A>49fe;hXBhKWTRTSK<SC0
+R2
+IP0<^oEo<djz1?7Zc_c:^b3
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 154 51
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@tx@d
+vtxd_tb
+R1
+!i10b 1
+!s100 95nd]e[KU^>2L>CiA`IeL0
+R2
+Io;=LjRB`WfZiNbJ_8j4`?1
+R3
+R0
+R40
+R41
+R42
+!i122 59
+L0 48 63
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vuart_controller_tb
+R1
+!i10b 1
+!s100 VW3ODQG^oz>zR3=eUmTZO1
+R2
+IK2bl0S[TFc>L8nD@g2dWW0
+R3
+R0
+R31
+R29
+R30
+!i122 59
+L0 13 88
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vuart_src_sink_tb
+R1
+!i10b 1
+!s100 KoHCa>2_]GBIHYbSWlR5Q1
+R2
+IQ[^=;aQC4ndJBWQkS_e7]0
+R3
+R0
+R26
+R27
+R28
+!i122 59
+L0 10 38
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vuart_tb
+R1
+!i10b 1
+!s100 KWbm@lYIg8kKeI58Tf3O[0
+R2
+Il[P=:@dI86;MbKF9SY2Sf1
+R3
+R0
+R40
+R41
+R42
+!i122 59
+L0 8 37
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+vUartControllerModule
+R1
+!i10b 1
+!s100 lk[aiQgTT`ESFNiU56Id80
+R2
+I>A@>[aBNYJ2@W[<ccbe2[0
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 663 100
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@uart@controller@module
+vUartModule
+R1
+!i10b 1
+!s100 cO379Q@CXa]P2FY@[hXF13
+R2
+I5NgS`e`oT]Zg5idMXBVQ02
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 617 45
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@uart@module
+vUartSink
+R1
+!i10b 1
+!s100 ]hN57dIPWb?;gO6SBz5j91
+R2
+I2;7[M1eTD]JCNoncFeh]e2
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 505 108
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@uart@sink
+vUartSource
+R1
+!i10b 1
+!s100 CVal51zgNh9<h>]7F==ZS3
+R2
+IZPP:3MVJj[[BYELYj0ZH@3
+R3
+R0
+R37
+R38
+R39
+!i122 59
+L0 405 97
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@uart@source

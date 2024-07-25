@@ -1,0 +1,28 @@
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+
+# Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# File: /media/jtech/Elecome240GB/1.Archive/Projects/aiFPGAs/Modules/Uart/Kernel.csv
+# Generated on: Fri Jul 26 03:51:24 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+clock,Input,PIN_27,2,B2_N0,PIN_28,,,,,,
+i_gpio,Input,PIN_62,4,B4_N0,PIN_21,,,,,,
+o_gpio,Output,PIN_14,1A,B1_N0,PIN_22,,,,,,
+reset,Input,PIN_123,8,B8_N0,PIN_89,,,,,,
+rx,Input,PIN_52,3,B3_N0,PIN_61,,,,,,
+tx,Output,PIN_56,3,B3_N0,PIN_132,,,,,,

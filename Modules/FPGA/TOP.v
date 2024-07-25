@@ -16,8 +16,8 @@ module TOP (
     // MatrixMul32Cores #(.DWIDTH(DWIDTH)) mul_cores (.CLOCK(CLOCK), .NRESET(NRESET), .START(START), .STREAM_A(STREAM_A), .STREAM_B(STREAM_B), .STREAM_O(STREAM_O));
     // MatrixMulManyCores #(.DWIDTH(DWIDTH), .CORES(CORES)) mul_cores (.CLOCK(CLOCK), .NRESET(NRESET), .START(START), .STREAM_A(STREAM_A), .STREAM_B(STREAM_B), .STREAM_O(STREAM_O));
 
-    // Neuron #(.IDIM(10), .ODIM(10)) nuron (.CLOCK(clock));
+    Neuron #(.IDIM(1), .ODIM(1024)) nuron (.CLOCK(clock));
 
-    STSource st (.clk(CLOCK), .reset(NRESET));
+    // STSource st (.clk(CLOCK), .reset(NRESET));
 
 endmodule

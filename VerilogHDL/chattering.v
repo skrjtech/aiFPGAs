@@ -1,36 +1,41 @@
-
-/*
-Description
-
-    ボタン入力のノイズを軽減
-
-    Parameters
-        None
-
-    input  CLOCK  :  入力クロック
-    input  NRESET :  リセット
-    input  SWITCHI:  スイッチ・ボタン
-    output SWITCHO:  ノイズ除去後ボタン
-
-*/
-
-module CHATTERING (
+// Chattering
+// ------------------------------------------------------------------------------------------------
+module Chattering (
     input  wire CLOCK,
     input  wire NRESET,
     input  wire SWITCHI,
     output wire SWITCHO
 );
 
-    reg [15:0] cnt; 
-    wire C_CLOCK = cnt[15];
-    always @(posedge CLOCK) begin 
-        cnt = cnt + 1'b1; 
-    end
-    
-    reg switch;
-    assign SWITCHO = switch;
-    always @(posedge C_CLOCK) begin 
-        switch = SWITCHI; 
-    end
+/*
+Description
+
+    ボタン入力ノイズ軽減
+
+    Parameters
+        None
+
+    in  : CLOCK     メイン・クロック
+    in  : NRESET    ベガティブ・リセット
+    in  : SWITCHI   スイッチ・ボタン
+    out : SWITCHO   ノイズ除去後ボタン
+
+*/
+
+// +1 カウント・アップ
+// ----------------------------------------------
+reg [15:0] cnt; 
+wire C_CLOCK = cnt[15];
+always @(posedge CLOCK) begin 
+    cnt = cnt + 1'b1; 
+end
+
+// 入力ロジック
+// ----------------------------------------------
+reg switch;
+assign SWITCHO = switch;
+always @(posedge C_CLOCK) begin 
+    switch = SWITCHI; 
+end
     
 endmodule

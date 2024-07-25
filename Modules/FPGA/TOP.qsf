@@ -63,8 +63,16 @@ set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
 set_location_assignment PIN_26 -to CLOCK
 set_location_assignment PIN_127 -to NRESET
-set_global_assignment -name QIP_FILE ips/STSource/synthesis/STSource.qip
-set_global_assignment -name VERILOG_FILE ../../VerilogHDLSources/NEURON/Sources/neuron.v
-set_global_assignment -name VERILOG_FILE ../../VerilogHDLSources/NEURON/Sources/floating.v
-set_global_assignment -name VERILOG_FILE ../../VerilogHDLSources/NEURON/Sources/matrix.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/uart.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/timer.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/stream.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/neuron.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/memory.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/matrix.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/gen8bitdata.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/ftypes.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/floating.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/fifo.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/counter.v
+set_global_assignment -name VERILOG_FILE ../../VerilogHDL/chattering.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

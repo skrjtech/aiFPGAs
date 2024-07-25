@@ -1,91 +1,61 @@
-
 `timescale 1us/100ps
 
-`define SCYCLE 20 // 50MHz
+`define SCYCLE     20                                    // 50MHz Main Clock
+`define DWIDTH     8                                     // ビット幅
+`define OPCDBYTE   2                                     // 命令サイズ
+`define ADDRBYTE   2                                     // メモリアドレスサイズ
+`define DATABYTE   4                                     // メインメモリサイズ，データサイズ
+`define BYTES      8                                     // 全Byte
+`define UARTMHZ    50000000                              // ペリフェラルヘルツ
+`define BAUDRATE   115200                                // ボードレート
+`define BAUDSCYCLE `SCYCLE * (`UARTMHZ / `BAUDRATE) * 10 // ボードサイクル
 
-`define UARTMHZ  50_000_000
-`define BAUDRATE 9600
-`define TXRXSCYCLE `SCYCLE * (`UARTMHZ / `BAUDRATE)
+module tb;
 
-module tb ();
+// 必要に応じて
+integer i, j, k;
 
-    reg clock = 0;
-    reg reset = 0;
-    always #(`SCYCLE / 2) clock = ~clock;
+reg clock = 0;
+reg reset = 0;
+always #(`SCYCLE / 2) clock = ~clock; // ＿|￣|＿|￣|＿|￣|＿|￣|＿|￣
 
-    // Transmit
-    reg  [7:0] txdata = 0;
-    reg        txstart = 0;
-    wire       tx, txbusy, txdone;
-    // Recieve 
-    wire [7:0] rxdata;
-    wire       rx ;
-    wire       rxbusy, rxdone;
+wire tx;
+cpu_uart_tx_tb u_cpu_uart_tx_tb();
+uart_controller_tb u_uart_con_tb();
+always @(*) begin
+    u_cpu_uart_tx_tb.clock = clock;
+    u_cpu_uart_tx_tb.reset = reset;
 
-    assign rx = tx;
+    u_uart_con_tb.clock = clock;
+    u_uart_con_tb.reset = reset;
+end
+assign tx = u_cpu_uart_tx_tb.tx;
+assign u_uart_con_tb.rx = tx;
 
-    Top #(
-        .SCYCLE     (`UARTMHZ   ),
-        .BAUDRATE   (`BAUDRATE  )
-    ) uTop (
-        .clk        (clock    ),
-        .reset      (reset    ),
-        .tx         (tx       ),
-        .txdata     (txdata   ),
-        .txstart    (txstart  ),
-        .txbusy     (txbusy   ),
-        .txdone     (txdone   ),
-        .rx         (rx       ),
-        .rxdata     (rxdata   ),
-        .rxbusy     (rxbusy   ),
-        .rxdone     (rxdone   )
-    );
-
-    wire sink_done;
-    wire [31:0] output_data;
-    UART_SINK #(
-        .SCYCLE     (`UARTMHZ   ),
-        .BAUDRATE   (`BAUDRATE  )
-    ) uSink (
-        .CLOCK  (clock      ),
-        .NRESET (reset      ),
-        .RX     (tx         ),
-        .DATAO  (output_data),
-        .DONE   (sink_done  )
-    );
-
-    initial begin
-        #(`SCYCLE);
-        reset = 1;
-        
-        Transmit(8'hAA);
-        Transmit(8'hBB);
-        Transmit(8'h18);
-        Transmit(8'h22);
-        Transmit(8'h22);
-        Transmit(8'h22);
-
-        Transmit(8'hEE);
-        Transmit(8'hBB);
-        Transmit(8'h00);
-        Transmit(8'hBB);
-        Transmit(8'hBB);
-        Transmit(8'h18);
-        
-        #(`TXRXSCYCLE * 10);
-        $stop;
-
+// Main Run
+initial begin
+    Init();
+    #(`SCYCLE / 2);
+    reset = 1;
+    for (i = 0; i < 10; i = i + 1) begin
+        u_cpu_uart_tx_tb.TransmitData(16'hFF00, 16'h0000, 32'hBAFE_DCBA + i);
     end
+    RUN_SCYCLE(1000);
+    $stop;
+end
 
-    task Transmit;
-        input [7:0] data;
-        begin
+task Init;
+begin
+    clock = 0;
+    reset = 0;
+end
+endtask
 
-            txdata = data;
-            txstart = 1;
-            #(`TXRXSCYCLE * 10);
-
-        end
-    endtask
+task RUN_SCYCLE;
+input [31:0] scycle;
+begin
+    #(`SCYCLE * scycle);
+end
+endtask
 
 endmodule

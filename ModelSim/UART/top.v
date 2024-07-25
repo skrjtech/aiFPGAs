@@ -17,7 +17,7 @@ module Top #(
     output wire       rxdone
 );
 
-UART #(
+UartModule #(
     .SCYCLE     (SCYCLE    ),
     .BAUDRATE   (BAUDRATE  )
 ) uUART (
