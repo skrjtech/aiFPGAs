@@ -1,5 +1,12 @@
-.docker/Quartus
-.docker/Dockerfile.init
-.docker/Dockerfile.org.org
-.docker/installer.exp
-.docker/quartusprime.sh
+# 基本シカトファイル形式
+*.ini
+*.wlf
+**/*Lib/
+**/db/
+**/incremental_db/
+transcript
+
+# 未完成実装環境
+.devcontainer/*
+.docker/*
+Modules/*
