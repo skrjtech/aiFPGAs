@@ -1,0 +1,32 @@
+# Copyright (C) 2022  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+
+# Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+# File: E:\1.Archive\Projects\aiFPGAs\Counter.csv
+# Generated on: Fri Oct 27 02:00:13 2023
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+CLOCK,Input,PIN_27,2,B2_N0,PIN_27,2.5 V,,,,,
+LEDS[7],Output,PIN_140,8,B8_N0,PIN_140,2.5 V,,,,,
+LEDS[6],Output,PIN_135,8,B8_N0,PIN_135,2.5 V,,,,,
+LEDS[5],Output,PIN_134,8,B8_N0,PIN_134,2.5 V,,,,,
+LEDS[4],Output,PIN_132,8,B8_N0,PIN_132,2.5 V,,,,,
+LEDS[3],Output,PIN_131,8,B8_N0,PIN_131,2.5 V,,,,,
+LEDS[2],Output,PIN_130,8,B8_N0,PIN_130,2.5 V,,,,,
+LEDS[1],Output,PIN_127,8,B8_N0,PIN_127,2.5 V,,,,,
+LEDS[0],Output,PIN_124,8,B8_N0,PIN_124,2.5 V,,,,,
+NRESET,Input,PIN_123,8,B8_N0,PIN_123,2.5 V,,,,,

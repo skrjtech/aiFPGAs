@@ -29,18 +29,6 @@ add wave -divider TestBench
 add wave -bin sim:/tb/clock
 add wave -bin sim:/tb/reset
 
-add wave -divider HostCPU
-add wave -hex sim:/tb/u_cpu_uart_tx_tb/fdata
-add wave -bin sim:/tb/u_cpu_uart_tx_tb/uUART/TX
-add wave -hex sim:/tb/u_cpu_uart_tx_tb/uUartSrc/TXDATA
-add wave -bin sim:/tb/u_cpu_uart_tx_tb/uUartSrc/DONE
-
-add wave -bin sim:/tb/u_cpu_uart_tx_tb/uUartSrc/*
-
-# add wave -divider UartController
-# add wave -uns sim:/tb/u_uart_con_tb/address
-# add wave -uns sim:/tb/u_uart_con_tb/w_addr
-# add wave -hex sim:/tb/u_uart_con_tb/ram1
 
 # run 1
 
